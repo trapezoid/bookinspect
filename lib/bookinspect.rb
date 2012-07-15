@@ -33,7 +33,6 @@ class PDFImages
 end
 
 class BookInspect
-  VERSION = "1.0"
   DENSITY = 200
   QUALITY = 100
 

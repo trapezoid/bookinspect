@@ -13,7 +13,7 @@ config = Pit.get("amazon-ecs", {:require => {
   :AWS_secret_key => "please input your aws secret key"
 }})
 
-program :version, BookInspect::VERSION
+program :version, "1.00"
 program :description, 'Rename pdf from barcode'
 
 command :detect do |c|
