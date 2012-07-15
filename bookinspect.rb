@@ -5,7 +5,7 @@ require 'rubygems'
 require 'commander/import'
 require 'pit'
 
-require_relative "lib/bookinspect.rb"
+require File.expand_path("lib/bookinspect.rb", File.dirname(__FILE__))
 
 config = Pit.get("amazon-ecs", {:require => {
   :associate_tag => "please input yor associate tag",

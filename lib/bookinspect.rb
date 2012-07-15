@@ -2,7 +2,7 @@ require 'pdf-reader'
 require 'zbar'
 require 'amazon/ecs'
 require 'tempfile'
-require 'rmagick'
+require 'RMagick'
 include Magick
 
 class BookInfo
@@ -15,7 +15,11 @@ class BookInfo
 end
 
 class PDFImages
-  PDFIMAGES = '/usr/local/bin/pdfimages'
+  @@path = 'pdfimages'
+
+  def self.set_path path
+    @@path = path
+  end
 
   def initialize file
     @file = file
@@ -24,7 +28,7 @@ class PDFImages
   def to_jpg first_page, last_page
     count = last_page - first_page + 1
     Dir.mktmpdir do |dir|
-      system(PDFIMAGES, '-f', first_page.to_s, '-l', last_page.to_s, '-j', @file, "#{dir}/page")
+      system(@@path, '-f', first_page.to_s, '-l', last_page.to_s, '-j', @file, "#{dir}/page")
       Dir.glob("#{dir}/page*").each do |page|
         yield page
       end
