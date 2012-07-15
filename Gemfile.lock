@@ -1,0 +1,32 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    Ascii85 (1.0.1)
+    amazon-ecs (2.2.4)
+      nokogiri (~> 1.4)
+      ruby-hmac (~> 0.3)
+    commander (4.1.2)
+      highline (~> 1.6.11)
+    ffi (1.0.11)
+    highline (1.6.13)
+    nokogiri (1.5.5)
+    pdf-reader (1.1.1)
+      Ascii85 (~> 1.0.0)
+      ruby-rc4
+    pit (0.0.6)
+    rmagick (2.13.1)
+    ruby-hmac (0.4.0)
+    ruby-rc4 (0.1.5)
+    zbar (0.1.1)
+      ffi
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  amazon-ecs
+  commander
+  pdf-reader
+  pit
+  rmagick
+  zbar
